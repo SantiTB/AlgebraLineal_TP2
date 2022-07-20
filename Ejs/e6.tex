@@ -1,0 +1,71 @@
+\item Hallar las matrices de cambio de base $P_{B_1,B_2}$ y $P_{B_2,B_1}$ para cada uno de los siguientes casos.
+    \begin{enumerate}
+        \item En $\R^3, B_1=\{(5,3,1);(1,-3,-2);(1,2,1)\}$ y $B_2=\{(-2,1,0);(-1,-3,0);(-2,-3,1)\}$
+            \begin{mdframed}[style=s]
+                Empiezo con $P_{B_2,B_1}$, la matriz de cambio de base de $B_1$ a $B_2$. Una forma que se me ocurre es la siguiente. Si tenemos un vector $v$ representado en las coordenadas de la base $B_1$, \[[v]_{B_1}=\begin{pmatrix}
+                    a\\b\\c
+                \end{pmatrix}\quad a,b,c\in\R\]Es decir que \[v=a(5,3,1)+b(1,-3,-2)+c(1,2,1)\]
+                Por otra parte, $v$ también puede ser representado en términos de la base $B_2$\[[v]_{B_2}=\begin{pmatrix}
+                    d\\e\\f
+                \end{pmatrix}\quad d,e,f\in\R\]
+                Entonces,\[v=d(-2,1,0)+e(-1,-3,0)+f(-2,-3,1)\]Por lo tanto tenemos que,\[a(5,3,1)+b(1,-3,-2)+c(1,2,1)=d(-2,1,0)+e(-1,-3,0)+f(-2,-3,1)\]De donde obtenemos el siguiente sistema de ecuaciones:
+                \begin{center}
+                    $\begin{cases}
+                        5a+b+c=-2d-e-2f\\
+                        3a-3b+2c=d-3e-3f\\
+                        a-2b+c=f
+                    \end{cases}$
+                \end{center}
+                Resolviendo para $d,e$ y $f$, llegamos a
+                \begin{center}
+                    $\begin{cases}
+                        d=(-15a-4c)/7\\
+                        e=(-19a+21b-13c)/7\\
+                        f=a-2b+c
+                    \end{cases}\to [v]_{B_2}=\begin{pmatrix}
+                        (-15a-4c)/7\\
+                        (-19a+21b-13c)/7\\
+                        a-2b+c
+                    \end{pmatrix}$
+                \end{center}
+                El objetivo es obtener la matriz de cambio de base, osea necesitamos que se cumpla\[\begin{pmatrix}
+                    (-15a-4c)/7\\
+                    (-19a+21b-13c)/7\\
+                    a-2b+c
+                \end{pmatrix}=P_{B_2,B_1}\cdot \begin{pmatrix}
+                    a\\b\\c
+                \end{pmatrix}\]Por lo tanto,\[P_{B_2,B_1}=\begin{pmatrix}
+                    -15/7&0&-4/7\\-19/7&3&-13/7\\1&-2&1
+                \end{pmatrix}\]
+                Para hallar $P_{B_1,B_2}$ calculamos $P_{B_2,B_1}^{-1}$\[P_{B_1,B_2}=\begin{pmatrix}
+                    -5&8&12\\
+                    6&-11&-17\\
+                    17&-30&-45                   
+                \end{pmatrix}\]
+            \end{mdframed}
+        \item En $\C_3[x], B_1=\{1,x-1,x^2-x,x^3\}$ y $B_2=\{x,x-1,x^2,x^3+1\}$
+            \begin{mdframed}[style=s]
+                En este caso, podría hacer el mismo procedimiento que antes, pero para variar un poco:\[P_{B_1,B_2}=\left([x]_{B_1}\quad[x-1]_{B_1}\quad[x^2]_{B_1}\quad[x^3+1]_{B_1}\right)\]\begin{center}
+                    $\begin{cases}
+                        x&=a_1(1)+b_1(x-1)+c_1(x^2-x)+d_1(x^3)\\
+                        x-1&=a_2(1)+b_2(x-1)+c_2(x^2-x)+d_2(x^3)\\
+                        x^2&=a_3(1)+b_3(x-1)+c_3(x^2-x)+d_3(x^3)\\
+                        x^3+1&=a_4(1)+b_4(x-1)+c_4(x^2-x)+d_4(x^3)
+                    \end{cases}\to\begin{cases}
+                        a_1=1,b_1=1,c_1=0,d_1=0\\
+                        a_2=0,b_2=1,c_2=0,d_2=0\\
+                        a_3=1,b_3=1,c_3=1,d_3=0\\
+                        a_4=1,b_4=0,c_4=0,d_4=1
+                    \end{cases}$\\
+                    $P_{B_1,B_2}=\begin{pmatrix}
+                        1&0&1&1\\1&1&1&0\\0&0&1&0\\0&0&0&1
+                    \end{pmatrix}$
+                \end{center}
+                Con la inversa obtengo:\[P_{B_2,B_1}=\begin{pmatrix}
+                    1 &0&-1&-1\\
+                    -1&1&0 & 1\\
+                    0 &0&1 & 0\\
+                    0 &0&0 & 1
+                \end{pmatrix}\]
+            \end{mdframed}
+    \end{enumerate}

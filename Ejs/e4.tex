@@ -1,0 +1,41 @@
+\item \begin{enumerate}
+        \item Hallar una base de $\C_3[x]$ que no sea la canónica.
+            \begin{mdframed}[style=s]
+                Propongo $B_1=\{1,x,x^2+1,x^3\}$. Para verificar que sea una base, me fijo si los polinomios son li.
+                \begin{center}
+                    $0=\alpha+\beta x+\gamma (x^2+1)+\delta x^3\to\begin{cases}
+                        \alpha+\gamma=0\\
+                        \beta=0\\
+                        \gamma=0\\
+                        \delta=0
+                    \end{cases}\to\alpha=0$
+                \end{center}
+                Al tener 4 polinomios li, estos generan $\C_3[x]$ y por ende son base.
+            \end{mdframed}
+        \item Hallar la matriz de cambio de base de $B=\{1-x,x-x^2,x^2-x^3,x^3\}$ en la base hallada en el ítem anterior.
+            \begin{mdframed}[style=s]
+                \begin{center}
+                    $P_{B_1,B}=\left([1-x]_{B_1}\quad[x-x^2]_{B_1}\quad[x^2-x^3]_{B_1}\quad[x^3]_{B_1}\right)$\\
+                    $P_{B_1,B}=\begin{pmatrix}
+                        1&1&-1&0\\-1&1&0&0\\0&-1&1&0\\0&0&-1&1
+                    \end{pmatrix}$
+                \end{center}
+            \end{mdframed}
+        \item ¿Cuáles son las coordenadas de $3x^3-x+2$ en la base $B$?
+            \begin{mdframed}[style=s]
+                \begin{center}
+                    $P_{B,\E}=\left([1]_{B}\quad[x]_{B}\quad[x^2]_{B}\quad[x^3]_{B}\right)$\\
+                    $P_{B,\E}=\begin{pmatrix}
+                        1&0&0&0\\1&1&0&0\\1&1&1&0\\1&1&1&1
+                    \end{pmatrix}$\\
+                    $\to [3x^3-x+2]_B=P_{B,\E}[3x^3-x+2]_\E$\\
+                    $\to[3x^3-x+2]_B=\begin{pmatrix}
+                        1&0&0&0\\1&1&0&0\\1&1&1&0\\1&1&1&1
+                    \end{pmatrix}\cdot\begin{pmatrix}
+                        2\\-1\\0\\3
+                    \end{pmatrix}=\begin{pmatrix}
+                        2\\1\\1\\4
+                    \end{pmatrix}$
+                \end{center}
+            \end{mdframed}
+    \end{enumerate}

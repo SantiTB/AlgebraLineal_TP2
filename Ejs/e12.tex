@@ -1,0 +1,39 @@
+\item Se dice que una transformación $T:\R^n\to\R^n$ es una isometría si preserva distancias, es decir\[dist(P,Q)=dist(T(P),T(Q))\quad\forall P,Q\in\R^n.\] Analizar cuáles de las transformaciones del ejercicio anterior, son isometrías.
+    \begin{mdframed}[style=s]
+        Todas las transformaciones son de $\R^2$ en $\R^2$, la distancia está definida como \[dist(u,v)=\sqrt{u_xv_x+u_yv_y}\]
+        \begin{enumerate}
+            \item Sean $u,v\in\R^2,dist(R_\alpha(u),R_\alpha(v))=$
+                \begin{align*}
+                    &\text{\tiny(Definición $R_\alpha$)}\\
+                    &=dist((u_x\cos(\alpha)-u_y\sin(\alpha),u_x\sin(\alpha)+u_y\cos(\alpha)),(v_x\cos(\alpha)-v_y\sin(\alpha),v_x\sin(\alpha)+v_y\cos(\alpha)))\\
+                    &\text{\tiny(Definición dist)}\\
+                    &=\sqrt{(u_x\cos(\alpha)-u_y\sin(\alpha))(v_x\cos(\alpha)-v_y\sin(\alpha))+(u_x\sin(\alpha)+u_y\cos(\alpha))(v_x\sin(\alpha)+v_y\cos(\alpha))}\\
+                    &\text{\tiny(Distributividad y factor común)}\\
+                    &=\sqrt{u_xv_x(\cos^2\alpha+\sin^2\alpha)+u_yv_y(\cos^2\alpha+\sin^2\alpha)}\\
+                    &\text{\tiny($1=\cos^2\alpha+\sin^2\alpha$)}\\
+                    &=\sqrt{u_xv_x+u_yv_y}\\
+                    &\text{\tiny(Definición dist)}\\
+                    &=dist(u,v)
+                \end{align*}
+                Por lo tanto, $R_\alpha$ es una isometría.
+            \item Sean $u,v\in\R^2$
+                \begin{align*}
+                    dist(S_Y(u),S_Y(v))&=dist((-u_x,u_y),(-v_x,v_y))&&\text{Definición }S_Y\\
+                    &=\sqrt{(-u_x)(-v_x)+u_yv_y}&&\text{Definición dist}\\
+                    &=\sqrt{u_xv_x+u_yv_y}&&\text{Producto en }\R\\
+                    &=dist(u,v)&&\text{Definición dist}
+                \end{align*}
+                Por lo tanto, $S_Y$ es una isometría.
+            \item En la Figura 4, se ve que $H_2$ no es una isometría, pero a pesar de esto, la distancia tiene una peculiaridad:\\
+                Sean $u,v\in\R$
+                \begin{align*}
+                    dist(H_2(u),H_2(v))&=dist((2u_x,2u_y),(2v_x,2v_y))\\
+                    &=\sqrt{4u_xv_x+4u_yv_y}\\
+                    &=2\sqrt{u_xv_x+u_yv_y}\\
+                    &=2\cdot dist(u,v)
+                \end{align*}
+                La transformación $H_2$ duplica las distancias entre dos vectores cualesquiera.
+            \item En la Figura 5, se ve que $P_X$ no es una isometría.
+        \end{enumerate}
+        \textbf{Aclaración:} La justificación gráfica sólo es válida en los casos en que no sea una isometría, ya que la definición especifíca que se debe cumplir para cualquier par de vectores, si encuentro un contraejemplo, ya es suficiente. Sin embargo, para probar que sí es una isometría, no me alcanza con ver que un conjunto (como los casos graficados en 11.a y 11.b) cumplan, ¿qué pasa si hay algún par de vectores en una región no contemplada que rompe la condición? No lo estaría teniendo en cuenta. Por eso, es necesario probar para dos vectores genéricos.
+    \end{mdframed}

@@ -1,0 +1,62 @@
+\item Sea $B=\{1+x,1+x^2,x+x^2\}$.
+    \begin{enumerate}
+        \item Probar que $B$ es una base para $\R_2[x]$.
+            \begin{mdframed}[style=s]
+                Veamos que la única manera de de obtener el polinomio nulo es la trivial.
+                \begin{center}
+                    $0=\alpha(1+x)+\beta(1+x^2)+\gamma(x+x^2)$\\
+                    $\begin{cases}
+                        \alpha+\beta=0\\
+                        \alpha+\gamma=0\\
+                        \beta+\gamma=0
+                    \end{cases}\to \alpha=\beta=\gamma=0$
+                \end{center}
+                Esto indica que los polinomios son linealmente independientes. Además, $\R_2[x]$ es de dimensión 3 y se tienen 3 polinomios li, entonces $B$ genera $\R_2[x]$, por ende, es base.
+            \end{mdframed}
+        \item Encontrar las coordenadas de $p(x)=3x^2+2x-1$ en la base $B$.
+            \begin{mdframed}[style=s]
+                \begin{center}
+                    $3x^2+2x-1=\alpha(1+x)+\beta(1+x^2)+\gamma(x+x^2)$\\
+                    $\begin{cases}
+                        \alpha+\beta=-1\\
+                        \alpha+\gamma=2\\
+                        \beta+\gamma=3
+                    \end{cases}\to\begin{cases}
+                        \alpha=-1\\
+                        \beta=0\\
+                        \gamma=3
+                    \end{cases}\to[p(x)]_B=\begin{pmatrix}
+                        -1\\0\\3
+                    \end{pmatrix}$
+                \end{center}
+            \end{mdframed}
+        \item Hallar las coordenadas de los elementos de $B$ en la base canónica de $\R_2[x]$.
+            \begin{mdframed}[style=s]
+                La base canónica de $\R_2[x]$ es $\E=\{1,x,x^2\}$
+                \begin{itemize}
+                    \item $1+x=\alpha(1)+\beta(x)+\gamma(x^2)\to[1+x]_\E=\begin{pmatrix}
+                            1\\1\\0
+                        \end{pmatrix}$
+                    \item $1+x^2=\alpha(1)+\beta(x)+\gamma(x^2)\to[1+x^2]_\E=\begin{pmatrix}
+                            1\\0\\1
+                        \end{pmatrix}$
+                    \item $x+x^2=\alpha(1)+\beta(x)+\gamma(x^2)\to[x+x^2]_\E=\begin{pmatrix}
+                            0\\1\\1
+                        \end{pmatrix}$
+                \end{itemize}
+            \end{mdframed}
+        \item Escribir a los vectores de la base canónica de $\R_2[x]$ como combinación lineal de los elementos de $B$
+            \begin{mdframed}[style=s]
+                \begin{itemize}
+                    \item $1=\alpha(1+x)+\beta(1+x^2)+\gamma(x+x^2)\to[1]_B=\begin{pmatrix}
+                            1/2\\1/2\\-1/2
+                        \end{pmatrix}$
+                    \item $x=\alpha(1+x)+\beta(1+x^2)+\gamma(x+x^2)\to[x]_B=\begin{pmatrix}
+                            1/2\\-1/2\\1/2
+                        \end{pmatrix}$
+                    \item $x^2=\alpha(1+x)+\beta(1+x^2)+\gamma(x+x^2)\to[x^2]_B=\begin{pmatrix}
+                            -1/2\\1/2\\1/2
+                        \end{pmatrix}$
+                \end{itemize}
+            \end{mdframed}
+    \end{enumerate}

@@ -1,0 +1,67 @@
+\item Sean $U$ y $V$ dos $\K$-espacios vectoriales, y sea $L(U,V)$ el conjunto de todas las transformaciones lineales de $U$ en $V$. Probar que $L(U,V)$ es un $\K$-EV con las operaciones dadas por:
+    \begin{itemize}
+        \item $(S+T)(u)=S(u)+T(u)$ para $S,T\in L(U,V)$ y $u\in U$.
+        \item $(\alpha T)(u)=\alpha\cdot T(u)$ para $T\in L(U,V),\alpha\in\K$ y $u\in U$
+    \end{itemize}
+    \begin{mdframed}[style=s]
+        Se buscarán probar los axiomas de espacio vectorial.
+        \begin{enumerate}
+            \item[1.] Sean $S,T\in L(U,V)$
+                \begin{align*}
+                    (S+T)(u)&=S(u)+T(u)&&\text{Definición suma}\\
+                    &=T(u)+S(u)&&\text{Conmutatividad en V}\\
+                    &=(T+S)(u)&&\text{Definición suma}
+                \end{align*}
+                $\to S+T=T+S\quad\forall S,T\in L(U,V)$
+            \item[2.] Sean $S,T,W\in L(U,V)$
+                \begin{align*}
+                    ((S+T)+W)(u)&=(S+T)(u)+W(u)&&\text{Definición suma}\\
+                    &=S(u)+T(u)+W(u)&&\text{Definición suma}\\
+                    &=S(u)+(T+W)(u)&&\text{Definición suma}\\
+                    &=(S+(T+W))(u)&&\text{Definición suma}
+                \end{align*}
+                $\to(S+T)+W=S+(T+W)\quad\forall S,T,W\in L(U,V)$
+            \item[3.] Existencia de elemento neutro $e$. Propongo $e:U\to V/e(u)=0_V\quad\forall u\in U$
+                \begin{align*}
+                    (e+T)(u)&=e(u)+T(u)&&\text{Definición suma}\\
+                    &=0_V+T(u)&&\text{Definición $e$}\\
+                    &=T(u)&&\text{Elemento neutro de V}
+                \end{align*}
+                $\to e+T=T\quad\forall T\in L(U,V)$
+            \item[4.] Inverso aditivo. Propongo que el inverso de $T$ sea $-T$, $T\in L(U,V)$
+                \begin{align*}
+                    (T+(-T))u&=T(u)+(-T)(u)&&\text{Definición suma}\\
+                    &=T(u)-T(u)&&\text{Linealidad de T}\\
+                    &=0_V&&\text{Resta}
+                \end{align*}
+                $\to (T+(-T))(u)=0\quad\forall u\in U\to T+(-T)=e$
+            \item[5.] Elemento neutro del producto. Sea $T\in L(U,V)$
+                \begin{align*}
+                    (1T)(u)&=1\cdot T(u)&&\text{Definición producto}\\
+                    &=T(u)&&\text{Elemento neutro del producto en V}\\
+                \end{align*}
+                $\to 1T=T \quad\forall T\in L(U,V)$ si $1$ es el elementro neutro del producto en $V$.
+            \item[6.] Sean $\alpha,\beta\in\K,T\in L(U,V)$
+                \begin{align*}
+                    (\alpha(\beta T))(u)&=\alpha(\beta T)(u)&&\text{Definición producto}\\
+                    &=\alpha\beta T(u)&&\text{Definición producto}
+                \end{align*}
+                $\to \alpha(\beta T)=(\alpha\beta)T\quad\forall\alpha,\beta\in\K,T\in L(U,V)$
+            \item[7.] Sean $\alpha,\beta\in\K,T\in L(U,V)$
+                \begin{align*}
+                    ((\alpha+\beta)T)(u)&=(\alpha+\beta)T(u)&&\text{Definición producto}\\
+                    &=\alpha T(u)+\beta T(u)&&\text{Distributividad en V}\\
+                    &=(\alpha T+\beta T)(u)&&\text{Definición suma}
+                \end{align*}
+                $\to (\alpha+\beta)T=\alpha T+\beta T\quad\forall\alpha,\beta\in\K,T\in L(U,V)$
+            \item[8.] Sean $\alpha\in\K\quad T,S\in L(U,V)$
+                \begin{align*}
+                    (\alpha(T+S))(u)&=\alpha(T+S)(u)&&\text{Definición producto}\\
+                    &=\alpha[T(u)+S(u)]&&\text{Definición suma}\\
+                    &=\alpha T(u)+\alpha S(u)&&\text{Distributividad en V}\\
+                    &=(\alpha T+\alpha S)(u)&&\text{Definición suma}
+                \end{align*}
+                $\to \alpha(T+S)=\alpha T+\alpha S\quad\forall\alpha\in\K\quad T,S\in L(U,V)$
+        \end{enumerate}
+        Por lo tanto $L(U,V)$ es un $\K$-EV.
+    \end{mdframed}

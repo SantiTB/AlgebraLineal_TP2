@@ -1,0 +1,27 @@
+\item \begin{enumerate}
+        \item Probar que existe una única transformación lineal $T:\R^2\to\R^2$ tal que $T(1,1)=(-5,3)$ y $T(-1,1)=(5,2)$. Determinar $T(5,3)$ y $T(-1,2)$.
+            \begin{mdframed}[style=s]
+                $\R^2$: un $\R$-EV de dimensión 2. $B=\{(1,1),(-1,1)\}$ es base de $\R^2$ por ser dos vectores del espacio li. Además, ya que $(-5,3),(5,2)\in\R^2$, se cumplen las hipótesis del \textbf{Teorema 2.3}. Entonces, existe una única transformación lineal $T:\R^2\to\R^2$ tal que\[T(1,1)=(-5,3)\quad T(-1,1)=(5,2)\]Un vector $v=(x,y)\in\R^2$ puede ser escrito como combinación lineal de los elementos de la base $B$,
+                \begin{align*}
+                    (x,y)&=\psi(1,1)+\eta(-1,1)\\
+                    (x,y)&=(\psi-\eta,\psi+\eta)\qquad\to\psi=\frac{x+y}{2}\quad\eta=\frac{y-x}{2}\\
+                    \to T(x,y)&=\frac{x+y}{2} T(1,1)+\frac{y-x}{2} T(-1,1)\\
+                    \to T(x,y)&=\frac{x+y}{2}(-5,3)+\frac{y-x}{2}(5,2)\\
+                    \to T(x,y)&=\left(-5x,\frac{1}{2}x+\frac{5}{2}y\right)
+                \end{align*}
+                Por lo tanto,\[T(5,3)=(-25,10)\qquad T(-1,2)=\left(5,\frac{9}{2}\right)\]
+            \end{mdframed}
+        \item Determinar si existe una transformación lineal $T:\R^2\to\R^2$ tal que $T(1,1)=(2,6),T(-1,1)=(2,5)$ y $T(2,7)=(5,3)$.
+            \begin{mdframed}[style=s]
+                Si tomo las primeras dos transformaciones, tengo un caso análogo al inciso anterior.
+                \begin{align*}
+                    T(x,y)&=\alpha T(1,1)+\beta T(-1,1)\\
+                    &=\alpha(2,6)+\beta(2,5)\\
+                    &=(2\alpha+2\beta,6\alpha+5\beta)\\
+                    \to T(x,y)&=\left(2y,\frac{1}{2}x+\frac{11}{2}y\right)
+                \end{align*}
+                Sin embargo\[T(2,7)=\left(14,\frac{79}{2}\right)\neq (5,3)\]
+                Se podría pensar en probar otro par de transformaciones y luego verficar una tercera. Las condiciones las podemos plantear de la siguiente manera:\[1)Tv_1=w_1\qquad 2)Tv_2=w_2\qquad 3)Tv_3=w_3\]
+                Cualquier combinación de 2 de los $v_i$ son linealmente independientes, con lo cual son base. De esto, se concluye que, la transformación que cumpla con las condiciones 1 y 2 es única. Ahora suponiendo que ésta no cumple con 3, no tiene sentido intentar buscar una transformación que cumpla por ejemplo, 2 y 3 y luego ver si se cumple 1. Ya que la única transformación que cumple 1 y 2, es la hallada en un primer intento. (Quizás se pueda formalizar la idea.)
+            \end{mdframed}
+    \end{enumerate}

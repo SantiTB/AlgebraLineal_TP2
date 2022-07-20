@@ -1,0 +1,156 @@
+\item Considerar los siguientes subconjuntos de $\R^{2\times2}$.
+    \begin{itemize}
+        \item $B_1=\left\{\begin{pmatrix}
+                1&0\\1&0
+            \end{pmatrix};\begin{pmatrix}
+                1&1\\0&0
+            \end{pmatrix};\begin{pmatrix}
+                1&1\\1&0
+            \end{pmatrix};\begin{pmatrix}
+                0&0\\0&1
+            \end{pmatrix}\right\}$.
+        \item $B_2=\left\{\begin{pmatrix}
+                -1&0\\1&-1
+            \end{pmatrix};\begin{pmatrix}
+                0&0\\0&-1
+            \end{pmatrix};\begin{pmatrix}
+                -1&1\\0&1
+            \end{pmatrix};\begin{pmatrix}
+                1&0\\0&0
+            \end{pmatrix}\right\}$.
+    \end{itemize}
+    \begin{enumerate}
+        \item Probar que $B_1$ y $B_2$ son bases para $\R^{2\times2}$.
+            \begin{mdframed}[style=s]
+                Nuevamente hay que verificar que sean li.
+                \begin{itemize}
+                    \item $\begin{pmatrix}
+                            0&0\\0&0
+                        \end{pmatrix}=x_1\begin{pmatrix}
+                            1&0\\1&0
+                        \end{pmatrix}+x_2\begin{pmatrix}
+                            1&1\\0&0
+                        \end{pmatrix}+x_3\begin{pmatrix}
+                            1&1\\1&0
+                        \end{pmatrix}+x_4\begin{pmatrix}
+                            0&0\\0&1
+                        \end{pmatrix}\to\begin{cases}
+                            x_1+x_2+x_3=0\\
+                            x_2+x_3=0\\
+                            x_1+x_3=0\\
+                            x_4=0
+                        \end{cases}$
+                        \begin{center}
+                            $\to x_1=x_2=x_3=x_4=0$    
+                        \end{center}
+                        Por ende, $B_1$ es base.
+                    \item $\begin{pmatrix}
+                            0&0\\0&0
+                        \end{pmatrix}=x_1\begin{pmatrix}
+                            -1&0\\1&-1
+                        \end{pmatrix}+x_2\begin{pmatrix}
+                            0&0\\0&-1
+                        \end{pmatrix}+x_3\begin{pmatrix}
+                            -1&1\\0&1
+                        \end{pmatrix}+x_4\begin{pmatrix}
+                            1&0\\0&0
+                        \end{pmatrix}\to\begin{cases}
+                            -x_1-x_3+x_4=0\\
+                            x_3=0\\
+                            x_1=0\\
+                            -x_1-x_2+x_3=0
+                        \end{cases}$
+                        \begin{center}
+                            $\to x_1=x_2=x_3=x_4=0$
+                        \end{center}
+                        Por lo tanto, $B_2$ es base.
+                \end{itemize}
+            \end{mdframed}
+        \item Hallar la matriz de cambio de base de $B_2$ en la base $B_1$.
+            \begin{mdframed}[style=s]
+                \begin{center}
+                    $P_{B_1,B_2}=\left(\left[\begin{pmatrix}
+                        -1&0\\1&-1
+                    \end{pmatrix}\right]_{B_1}\quad\left[\begin{pmatrix}
+                        0&0\\0&-1
+                    \end{pmatrix}\right]_{B_1}\quad\left[\begin{pmatrix}
+                        -1&1\\0&1
+                    \end{pmatrix}\right]_{B_1}\quad\left[\begin{pmatrix}
+                        1&0\\0&0
+                    \end{pmatrix}\right]_{B_1}\right)$
+                \end{center}
+                Para saber las coordenadas de una matriz arbitraria en la base $B_1$, podemos plantear
+                \begin{center}
+                    $\begin{pmatrix}
+                        a&b\\c&d
+                    \end{pmatrix}=x_1\begin{pmatrix}
+                        1&0\\1&0
+                    \end{pmatrix}+x_2\begin{pmatrix}
+                        1&1\\0&0
+                    \end{pmatrix}+x_3\begin{pmatrix}
+                        1&1\\1&0
+                    \end{pmatrix}+x_4\begin{pmatrix}
+                        0&0\\0&1
+                    \end{pmatrix}$\\
+                    $\to \begin{cases}
+                        a=x_1+x_2+x_3\\
+                        b=x_2+x_3\\
+                        c=x_1+x_3\\
+                        d=x_4
+                    \end{cases}\to\begin{cases}
+                        x_1=a-b\\
+                        x_2=a-c\\
+                        x_3=-a+b+c\\
+                        x_4=d
+                    \end{cases}$\\
+                    $P_{B_1,B_2}=\begin{pmatrix}
+                        -1-0&0-0&-1-1&1-0\\-1-1&0-0&-1-0&1-0\\-(-1)+0+1&-0+0+0&-(-1)+1+0&-1+0+0\\-1&-1&1&0
+                    \end{pmatrix}=\begin{pmatrix}
+                        -1&0&-2&1\\-2&0&-1&1\\2&0&2&-1\\-1&-1&1&0
+                    \end{pmatrix}$
+                \end{center}
+            \end{mdframed}
+        \item ¿Cuáles son las coordenadas de $\begin{pmatrix}
+                0&1\\1&-2
+            \end{pmatrix}$ en la base $B_2$?¿Y en la base $B_1$?
+            \begin{mdframed}[style=s]
+                Para la base $B_1$ en el inciso anterior obtuve los escalares en base a las entradas de la matriz
+                \begin{center}
+                    $\to\left[\begin{pmatrix}
+                        0&1\\1&-2
+                    \end{pmatrix}\right]_{B_1}=\begin{pmatrix}
+                        -1\\-1\\2\\-2
+                    \end{pmatrix}$
+                \end{center}
+                Para tener las coordenadas en la base $B_2$, puedo encontrar la matriz de cambio de base de $\E$ a $B_2$:
+                \begin{center}
+                    $P_{B_2,\E}=\left([E_1]_{B_2}\quad[E_2]_{B_2}\quad[E_3]_{B_2}\quad[E_4]_{B_2}\right)$\\
+                    $P_{B_2,\E}=\begin{pmatrix}
+                        0&0&1&0\\0&1&-1&-1\\0&1&0&0\\1&1&1&0
+                    \end{pmatrix}$\\
+                    $\left[\begin{pmatrix}
+                        0&1\\1&-2
+                    \end{pmatrix}\right]_{B_2}=\begin{pmatrix}
+                        0&0&1&0\\0&1&-1&-1\\0&1&0&0\\1&1&1&0
+                    \end{pmatrix}\cdot\begin{pmatrix}
+                        0\\1\\1\\-2
+                    \end{pmatrix}=\begin{pmatrix}
+                        1\\2\\1\\2
+                    \end{pmatrix}$
+                \end{center}
+                Ahora podemos comprobar con la matriz del inciso anterior
+                \begin{center}
+                    $\left[\begin{pmatrix}
+                        0&1\\1&-2
+                    \end{pmatrix}\right]_{B_1}=P_{B_2,B_1}\cdot\left[\begin{pmatrix}
+                        0&1\\1&-2
+                    \end{pmatrix}\right]_{B_2}=\begin{pmatrix}
+                        -1&0&-2&1\\-2&0&-1&1\\2&0&2&-1\\-1&-1&1&0
+                    \end{pmatrix}\cdot\begin{pmatrix}
+                        1\\2\\1\\2
+                    \end{pmatrix}=\begin{pmatrix}
+                        -1\\-1\\2\\-2
+                    \end{pmatrix}$
+                \end{center}
+            \end{mdframed}
+    \end{enumerate}

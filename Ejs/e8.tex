@@ -1,0 +1,98 @@
+\item Determinar si las siguientes aplicaciones son transformaciones lineales.
+    \begin{enumerate}
+        \item $T:\R^3\to\R^3$ dada por $T(x,y,z)=(x-y,x^2,2z)$.
+            \begin{mdframed}[style=s]
+                Para que una aplicación $T:V\to W$ sea una transformación lineal se deben cumplir dos cosas:
+                \begin{enumerate}
+                    \item $T(a+b)=T(a)+T(b)\quad \forall a,b\in V$
+                    \item $T(\alpha a)=\alpha T(a)\quad\forall \alpha\in\K,a\in V$
+                \end{enumerate}
+                También se pueden combinar ambas condiciones en una \[T(\alpha a+b)=\alpha T(a)+T(b)\]
+                Con respecto a la aplicación del ejercicio, sean $a,b\in \R^3,\alpha\in\R$:
+                \begin{align*}
+                    T(\alpha a+b)&=T(\alpha(a_x,a_y,a_z)+(b_x,b_y,b_z))\\
+                    &=T((\alpha a_x+b_x,\alpha a_y+b_y,\alpha a_z+b_z))\\
+                    &=(\alpha a_x+b_x-(\alpha a_y+b_y),(\alpha a_x+b_x)^2,2(\alpha a_z+b_z))\\
+                    &=(\alpha (a_x-a_y)+b_x-b_y,(\alpha a_x)^2+2\alpha a_xb_x+b_x^2,2\alpha a_z+2b_z)\\
+                    &=(\alpha(a_x-a_y),{\alpha a_x}^2,2\alpha a_z)+(b_x-b_y,b_x^2,2b_z)+(0,2\alpha a_xb_x,0)\\
+                    &=\alpha(a_x-a_y,a_x^2,2a_z)+(b_x-b_y,b_x^2,2b_z)+(0,2\alpha a_xb_x,0)\\
+                    &=\alpha T(a)+T(b)+(0,2\alpha a_xb_x,0)\\
+                    &\neq \alpha T(a)+T(b)
+                \end{align*}
+                Por lo tanto, no es una transformación lineal.
+            \end{mdframed}
+        \item $T:\R^{3\times1}\to\R^{3\times1}$ dada por $T\begin{pmatrix}
+                x\\y\\z
+            \end{pmatrix}=\begin{pmatrix}
+                2x-3y\\3y-2z\\2z
+            \end{pmatrix}.$
+            \begin{mdframed}[style=s]
+                Sean $A,B\in\R^{3\times1},\alpha\in\R$
+                \begin{align*}
+                    T(\alpha A+B)&=T\left(\alpha\begin{pmatrix}
+                        A_x\\A_y\\A_z
+                    \end{pmatrix}+\begin{pmatrix}
+                        B_x\\B_y\\B_z
+                    \end{pmatrix}\right)\\
+                    &=T\begin{pmatrix}
+                        \alpha A_x+B_x\\\alpha A_y+B_y\\\alpha A_z+B_z
+                    \end{pmatrix}\\
+                    &=\begin{pmatrix}
+                        2(\alpha A_x+B_x)-3(\alpha A_y+B_y)\\3(\alpha A_y+B_y)-2(\alpha A_z+B_z)\\2(\alpha A_z+B_z)
+                    \end{pmatrix}\\
+                    &=\begin{pmatrix}
+                        2\alpha A_x-3\alpha A_y\\3\alpha A_y-2\alpha A_z\\2\alpha A_z
+                    \end{pmatrix}+\begin{pmatrix}
+                        2B_x-3B_y\\3B_y-2B_z\\2B_z
+                    \end{pmatrix}\\
+                    &=\alpha\begin{pmatrix}
+                        2A_x-3A_y\\3A_y-2A_z\\2A_z
+                    \end{pmatrix}+\begin{pmatrix}
+                        2B_x-3B_y\\3B_y-2B_z\\2B_z
+                    \end{pmatrix}\\
+                    &=\alpha T(A)+T(B)
+                \end{align*}
+                Por lo tanto, $T$ es una transformación lineal.
+            \end{mdframed}
+        \item $T:\R^4\to\R^2$ dada por $T(x_1,x_2,x_3,x_4)=(0,0)$.
+            \begin{mdframed}[style=s]
+                Sean $u,v\in\R^4,\delta\in\R$
+                \begin{align*}
+                    T(\delta u+v)&=(0,0)\\
+                    \delta T(u)+T(v)&=\delta(0,0)+(0,0)=(0,0)
+                \end{align*}
+                $T$ es una transformación lineal.
+            \end{mdframed}
+        \item $T:\C\to\C$ dada por $T(z)=\bar{z}$.
+            \begin{mdframed}[style=s]
+                Sea $v\in\C$\[T(iv)=\overline{iv}=\bar{i}\bar{v}=-i\bar{v}=-iT(v)\neq iT(v)\]
+                Por lo tanto, $T$ no es una transformación lineal.
+            \end{mdframed}
+        \item La función traza $tr:\C^{n\times n}\to\C$ dada por $tr(A)=\displaystyle\sum_{i=1}^na_{ii}$.
+            \begin{mdframed}[style=s]
+                Sean $A,B\in\C^{n\times n},\lambda\in\C$
+                \begin{enumerate}
+                    \item $T(A+B)=tr(A+B)=\sum_{i=1}^n(a_{ii}+b_{ii})=\sum_{i=1}^na_{ii}+\sum_{i=1}^nb_{ii}=T(A)+T(B)$
+                    \item $T(\lambda A)=\sum_{i=1}^n(\lambda a_{ii})=\lambda\sum_{i=1}^na_{ii}=\lambda\sum_{i=1}^na_{ii}$
+                \end{enumerate}
+                Por ende, $T$ es una transformación lineal.
+            \end{mdframed}
+        \item La función determinante $det:\C^{n\times n}\to \C$.\\
+            \textbf{Sugerencia:} Considerar primero el caso $n=2$.
+            \begin{mdframed}[style=s]
+                Sean $A,B\in\C^{2\times2}$
+                \begin{enumerate}
+                    \item $T(A+B)=det(A+B)=\begin{vmatrix}
+                        a_{11}+b_{11}&a_{12}+b_{12}\\a_{21}+b_{21}&a_{22}+b_{22}
+                    \end{vmatrix}=(a_{11}+b_{11})(a_{22}+b_{22})-(a_{12}+b_{12})(a_{21}+b_{21})$
+                    \[=a_{11}a_{22}-a_{12}a_{21}+b_{11}b_{22}-b_{12}b_{21}+a_{11}b_{22}+a_{22}b_{11}-a_{12}b_{21}-a_{21}b_{12}\]
+                        Mientras que $T(A)+T(B)=det(A)+det(B)=\begin{vmatrix}
+                            a_{11}&a_{12}\\a_{21}&a_{22}
+                        \end{vmatrix}+\begin{vmatrix}
+                            b_{11}&b_{12}\\b_{21}&b_{22}
+                        \end{vmatrix}$
+                        \[=a_{11}a_{22}-a_{12}a_{21}+b_{11}b_{22}-b_{12}b_{21}\]
+                \end{enumerate}
+                Como conclusión, $T$ no es una transformación lineal.
+            \end{mdframed}
+    \end{enumerate}

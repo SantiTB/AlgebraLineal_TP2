@@ -1,0 +1,86 @@
+\item Sea $\E=\{e_1,\dots,e_n\}$ la base canónica de $\R^n$(como $\R$-EV) y sean
+    \begin{center}
+        $u_1=e_2-e_1,$ $ u_2=e_3-e_2,\dots,u_{n-1}=e_n-e_{n-1},$ $u_n=e_n$ 
+    \end{center}
+    \begin{enumerate}
+        \item Probar que $B=\{u_1,\dots,u_n\}$ es una base de $\R^n$.
+            \begin{mdframed}[style=s]
+                $B$ tiene $n$ elementos, así que si muestro que son li, entonces es base.
+                \begin{align*}
+                    0&=\displaystyle\sum_{i=1}^nx_iu_i=\bsum_{i=1}^{n-1}x_i(e_{i+1}-e_i)+x_ne_n\\
+                    &=x_1e_2+x_2e_3+x_3e_4+\dots+x_{n-1}e_n\\
+                    -x_1e_1&-x_2e_2-x_3e_3-x_4e_4-\dots-x_{n-1}e_{n-1}+x_ne_n\\
+                    &=(-x_1)e_1+(x_1-x_2)e_2+(x_2-x_3)e_3+\dots+(x_{n-2}-x_{n-1})e_{n-1}+(x_{n-1}+x_n)e_n
+                \end{align*}
+                Se ve que $0$ quedó expresado como combinación lineal de los vectores de la base canónica. Como estos son li, todos los escalares deben ser $0$. Por lo tanto
+                \begin{center}
+                    $-x_1=(x_1-x_2)=(x_2-x_3)=\dots=(x_{n-2}-x_{n-1})=(x_{n-1}+x_n)=0$\\
+                    $\to x_1=x_2=x_3=\dots=x_{n-1}=x_n=0$
+                \end{center}
+                Entonces, la única manera de obtener el vector nulo como combinación lineal de los vectores de $B$ es con escalares nulos, entonces $B$ es un conjunto li.\vspace{6pt}\\
+                Otra manera de verificar que sean li, hubiese sido armando una matriz cuyas columnas sean los vectores de $B$ y calcular su determinante. Tenemos que
+                \begin{align*}
+                    u_1&=(-1,1,0,0,\dots,0,0)\\
+                    u_2&=(0,-1,1,0,\dots,0,0)\\
+                    u_3&=(0,0,-1,1,\dots,0,0)\\
+                    &\vdots\\
+                    u_{n-1}&=(0,0,0,0,\dots,-1,1)\\
+                    u_n&=(0,0,0,0,\cdots,0,1)
+                \end{align*}
+                Al ponerlo en forma de matriz:
+                \begin{center}
+                    $\begin{pmatrix}
+                        -1&0&0&\dots&0&0\\
+                        1&-1&0&\dots&0&0\\
+                        0&1&-1&\dots&0&0\\
+                        &\vdots&&&\vdots&\\
+                        0&0&0&\dots&-1&0\\
+                        0&0&0&\dots&1&1
+                    \end{pmatrix}$
+                \end{center}
+                Se ve que como resultado tengo una matriz triangular. Entonces el determinante es $(-1)^{n-1}\neq 0$. Por lo tanto, los vectores $u_i\in B$ son li.
+            \end{mdframed}
+        \item Hallar las matrices de cambio de base $P_{\E,B}$ y $P_{B,\E}$ para $n=3$.
+            \begin{mdframed}[style=s]
+                Para $n=3$: $\E=\{(1,0,0);(0,1,0);(0,0,1)\}$ y $B=\{(-1,1,0);(0,-1,1);(0,0,1)\}$
+                \begin{align*}
+                    P_{\E,B}=\left([(-1,1,0)]_\E\quad[(0,-1,1)]_\E\quad[(0,0,1)]_\E\right)&=\begin{pmatrix}
+                        -1&0&0\\1&-1&0\\0&1&1
+                    \end{pmatrix}\\
+                    P_{B,\E}=\left([(1,0,0)]_B\quad[(0,1,0)]_B\quad[(0,0,1)]_B\right)&=\begin{pmatrix}
+                        -1&0&0\\-1&-1&0\\1&1&1
+                    \end{pmatrix}
+                \end{align*}
+            \end{mdframed}
+        \item Probar que para todo $v\in\R^3$, se tiene que $[v]_B=P_{B,\E}[v]_\E$.
+            \begin{mdframed}[style=s]
+                Sea $v\in\R^3\to$
+                \begin{center}
+                    $v=(x,y,z)=\alpha(-1,1,0)+\beta(0,-1,1)+\gamma(0,0,1)$\\
+                    $\begin{cases}
+                        x=-\alpha\\
+                        y=\alpha-\beta\\
+                        z=\beta+\gamma
+                    \end{cases}\to\begin{cases}
+                        \alpha=-x\\
+                        \beta=-x-y\\
+                        \gamma=x+y+z
+                    \end{cases}$\\
+                    $\to v=(-x)(-1,1,0)+(-x-y)(0,-1,1)+(x+y+z)(0,0,1)$\\
+                    $\to [v]_B=\begin{pmatrix}
+                        -x\\-x-y\\x+y+z
+                    \end{pmatrix}$
+                \end{center}
+                Por otra parte,
+                \begin{center}
+                    $P_{B,\E}[v]_\E=\begin{pmatrix}
+                        -1&0&0\\-1&-1&0\\1&1&1
+                    \end{pmatrix}\cdot\begin{pmatrix}
+                        x\\y\\z
+                    \end{pmatrix}=\begin{pmatrix}
+                        -x\\-x-y\\x+y+z
+                    \end{pmatrix}$
+                \end{center}
+                Y se ve que ambos resultados son iguales.
+            \end{mdframed}
+    \end{enumerate}
